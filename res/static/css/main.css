@@ -21,7 +21,7 @@ header {
 }
 
 .label {
-    --top-offset: 100px;
+    --top-offset: 105px;
 
     background-color:chocolate;
     border-radius: 50%;
@@ -31,6 +31,38 @@ header {
     padding-top: var(--top-offset);
     position: relative;
     top: calc((var(--top-offset) + var(--header-border-size)) * -1)
+}
+
+.cube::after {
+    content: "";
+    display: block;
+    position: absolute;
+    border: 25px solid #ffc632;
+    border-radius: 50%;
+}
+
+.cube[id="first"]::after {
+    right: -1px;
+}
+
+.cube[id="second"]::after {
+    left: -1px;
+}
+
+.cube {
+    content: "";
+    display: block;
+    position: absolute;
+    border: 25px solid chocolate;
+    top: calc(125px - 100px + var(--top-offset)); 
+}
+
+.cube[id="first"] {
+    left: -25px;
+}
+
+.cube[id="second"] {
+    right: -25px;
 }
 
 .label > h1 {
